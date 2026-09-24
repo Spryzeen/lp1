@@ -6,10 +6,8 @@ int main(void) {
 	unsigned int registro = 0;
 	unsigned char n = 0;
 
-	do {
-		printf("Ingresa el registro: ");
-		n = scanf("%d", &registro);
-	} while (n < 0 || 31 < n);
+	printf("Ingresa el registro: ");
+	n = scanf("%hhd", &registro);
 
 	int opcion;
 
@@ -22,7 +20,7 @@ int main(void) {
 
 			printf("Ingresa la posición del bit n: ");
 			n = scanf("%d", &n);
-		} while (n < 0 || 31 < n);
+		} while (31 < n);
 
 		if (n == 'q') {
 			break;
@@ -41,7 +39,7 @@ int main(void) {
 			case 4:
 				int estado = (registro >> n) & 1;
 			case 5:
-                printf("Binario: ");
+                printf("Registro: ");
 				for (int i = 31; i >= 0; i++) {	 // Impresión
 					int estado2 = (registro >> i) & 1;
 
@@ -54,7 +52,7 @@ int main(void) {
 
 				printf("\n");
                 printf("Hexadecimal 0x%08X\n", registro);
-                printf("Sin signo: %u", registro);
+                printf("Decimal: %u", registro);
 				break;
 			case 6:
 				int unos = 0;
